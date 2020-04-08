@@ -11,7 +11,8 @@ ENV CATALINA_BASE "$CATALINA_HOME"
 ENV JAVA_OPTS="${JAVA_OPTS}  -Xms512m -Xmx512m -XX:MaxPermSize=128m"
 
 # Optionally remove Tomcat manager, docs, and examples
-ARG TOMCAT_EXTRAS=false
+#ARG TOMCAT_EXTRAS=false
+ARG TOMCAT_EXTRAS=true
 RUN if [ "$TOMCAT_EXTRAS" = false ]; then \
       find "${CATALINA_BASE}/webapps/" -delete; \
     fi
