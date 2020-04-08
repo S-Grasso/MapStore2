@@ -19,7 +19,8 @@ RUN if [ "$TOMCAT_EXTRAS" = false ]; then \
 
 # Add war files to be deployed
 ADD https://github.com/geosolutions-it/MapStore2/releases/download/v2020.01.01/mapstore.war /docker/
-COPY docker/*.war "${CATALINA_BASE}/webapps/"
+#COPY docker/*.war "${CATALINA_BASE}/webapps/"
+COPY docker/mapstore.war "${CATALINA_BASE}/webapps/"
 
 # Geostore externalization template. Disabled by default
 COPY docker/geostore-datasource-ovr.properties "${CATALINA_BASE}/conf/"
